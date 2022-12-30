@@ -1,0 +1,32 @@
+.poke-card {
+  text-align: center;
+  padding: 16px;
+  width: 8rem;
+  height: 10rem;
+  background-color: blue;
+  border-radius: 80px;
+  margin-top: 5px;
+  background: linear-gradient(
+      217deg,
+      rgba(255, 0, 0, 0.8),
+      rgba(255, 0, 0, 0) 70.71%
+    ),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+}
+
+.poke-card-button {
+  /* background-color: cyan;
+  border-radius: 20px; */
+
+  color: #1cc49d;
+  background-color: #1b2f31;
+  border-radius: 50px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* height: 3em;
+  width: 8em; */
+  font-size: large;
+  font-weight: 600;
+}
