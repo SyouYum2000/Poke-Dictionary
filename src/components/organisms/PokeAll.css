@@ -15,18 +15,11 @@
     linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
 }
 
-.poke-card-button {
-  /* background-color: cyan;
-  border-radius: 20px; */
-
-  color: #1cc49d;
-  background-color: #1b2f31;
-  border-radius: 50px;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  /* height: 3em;
-  width: 8em; */
-  font-size: large;
-  font-weight: 600;
+.poke-next-url {
+  margin-right: 5px;
+  margin-left: 5px;
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+  color: green;
 }

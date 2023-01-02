@@ -14,3 +14,25 @@
 .poke-button {
   margin-top: 40px;
 }
+
+.change-color-button {
+  border-radius: 20px;
+  border-color: gray;
+  width: 20%;
+  background: radial-gradient(
+      circle at 50% 0,
+      rgba(255, 0, 0, 0.5),
+      rgba(255, 0, 0, 0) 70.71%
+    ),
+    radial-gradient(
+      circle at 6.7% 75%,
+      rgba(0, 0, 255, 0.5),
+      rgba(0, 0, 255, 0) 70.71%
+    ),
+    radial-gradient(
+        circle at 93.3% 75%,
+        rgba(0, 255, 0, 0.5),
+        rgba(0, 255, 0, 0) 70.71%
+      )
+      beige;
+}

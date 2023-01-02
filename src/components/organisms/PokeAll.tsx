@@ -5,6 +5,8 @@ import { poke } from '../../types';
 import "./PokeAll.css"
 
 const PokeAll = () => {
+  const [nextUrl,setNextUrl] = useState<string>("")
+  const [prevUrl,setPrevUrl] = useState<string>("")
   const [loadUrl,setLoadUrl] = useState<string>('https://pokeapi.co/api/v2/pokemon?limit=20');
   const [loading,setLoading] = useState<boolean>(true);
   const[allPokemons, setAllPokemons] = useState<any[]>([]);
@@ -13,9 +15,11 @@ const PokeAll = () => {
      const res = await axios.get(loadUrl);
      setLoading(false);
      loadPokemon(res.data.results);
+     setNextUrl(res.data.next);
+     setPrevUrl(res.data.previous);
    }
    getUrl();
-  },[])
+  },[loadUrl])
 
   const loadPokemon = async(data:poke[]) =>{
     let _pokemonData = await Promise.all(
@@ -25,6 +29,14 @@ const PokeAll = () => {
         })
     )
     setAllPokemons(_pokemonData);
+  }
+
+  const showNextPokemon = () =>{
+    setLoadUrl(nextUrl);
+  }
+
+  const showPrevPokemon = () =>{
+    setLoadUrl(prevUrl);
   }
 
   
@@ -41,7 +53,14 @@ const PokeAll = () => {
              <div className='poke-card-search'>
                 <p>No{item.data.id}</p>
              </div>
-            </div>
+               { prevUrl &&
+                 <button className='poke-next-url' onClick={showPrevPokemon}>←</button>
+               }
+    
+               { nextUrl && 
+                 <button className='poke-next-url' onClick={showNextPokemon}>→</button>
+               }              
+             </div>
           )
         })}
     </>

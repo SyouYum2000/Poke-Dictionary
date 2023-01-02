@@ -27,6 +27,7 @@ const PokeInfo = () => {
     setPokeInput(e.target.value)
   }
   const searchPoke = (e:any) =>{
+    if(pokeInput === "") return;
     e.preventDefault();
     setPokeSearch(pokeInput);
   }
@@ -50,10 +51,12 @@ const PokeInfo = () => {
         <img src={pokeDataInfo.sprites.back_default} width={180} height={180}/>}
       </div>
       <div className='poke-buttons'>
+        {anotherColor ? <h2>anotherColor</h2> :<h2>defaultColor</h2>}
        <div className='poke-button'>
-        <button onClick={changePokeColor}>color</button>
+        <button onClick={changePokeColor} className="change-color-button">color</button>
        </div>
        <div className='poke-button'>
+        <h2>Type</h2>
         {pokeDataInfo.types.map((item:any)=>{
            return(
             <p>{item.type.name}</p>
@@ -61,6 +64,7 @@ const PokeInfo = () => {
         })}
        </div>
        <div className='poke-button'>
+        <h2>Ability</h2>
         {pokeDataInfo.abilities.map((item:any)=>{
            return(
            <p>{item.ability.name}</p>
